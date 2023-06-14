@@ -1,12 +1,12 @@
 import React from "react";
 import { actors } from "../data";
-import uuid from "react-uuid";
+import { v4 as uuidv4 } from "uuid";
 
 function Actors() {
   function actorsInfo() {
     return actors.map((actor) => (
-      <div>
-        <h3 key={uuid()}>Name: {actor.name}</h3>
+      <div key={uuidv4()}>
+        <h3>Name: {actor.name}</h3>
         <div>
           Movies:
           {actor.movies.map((movie) => (
